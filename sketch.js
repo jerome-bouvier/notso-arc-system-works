@@ -1,5 +1,3 @@
-let tiles = 20
-
 function setup() {
   createCanvas(900, 900)
   colorMode(HSB, 360, 100, 100, 100)
@@ -9,13 +7,13 @@ function setup() {
 }
 
 function draw() {
-  
+  let tiles = Math.floor(random(1,30))
   let tileSize = width / tiles
   let margin = width / 10
   let r
   
-  background('#333333')
-  stroke(255, 80)
+  background(255)
+  stroke(0,80)
   
   noFill()
 
@@ -23,7 +21,7 @@ function draw() {
     for (let x = margin; x < width - margin; x += tileSize) {
 
       r = Math.floor(random(0, 5))
-      strokeWeight(8)
+      strokeWeight(tiles * 0.25)
       drawArc(x, y, tileSize, r)
       strokeWeight(0.5)
       line(x, y, x + tileSize, y + tileSize)
